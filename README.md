@@ -75,9 +75,9 @@ The FastAPI server should be running on http://localhost:8000.
     npm install
     ```
 
-3. Install dependencies:
+3. Run the frontend development server:
     ``` bash
-    npm install
+    npm start
     ```
 The frontend should now be running on http://localhost:3000.
    
