@@ -1,0 +1,100 @@
+.chat-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chat-content {
+    background-color: rgba(255, 255, 255, 0.8); /* 약간 투명하게 */
+    width: 100%;
+    height: 80vh;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.chat-history {
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+.chat-bubble {
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    max-width: 75%;
+    display: inline-block;
+    position: relative; /* 채팅 위치를 조정하기 위한 상대적 포지션 */
+}
+
+.user-bubble {
+    background-color: #0084ff;
+    color: white;
+    align-self: flex-end;
+    float: right; /* 사용자 메시지는 우측에 */
+    clear: both;
+}
+
+.model-bubble {
+    background-color: #e5e5ea;
+    color: black;
+    align-self: flex-start;
+    float: left; /* 모델 메시지는 좌측에 */
+    clear: both;
+}
+
+.chat-input-form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.chat-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    padding-right: 50px; /* 아이콘 영역 확보 */
+}
+
+.send-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    color: #1890ff;
+}
+
+.chat-box {
+    width: 70%;
+}
