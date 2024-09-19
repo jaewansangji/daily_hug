@@ -1,46 +1,87 @@
-# Getting Started with Create React App
+# Daily Hug Chat Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+This is a conversational web application where users can chat with an AI model based on the **[Gemma-2b-it (daily_hug)](https://huggingface.co/JaeJiMin/daily_hug)** language model. The AI model provides friendly and empathetic responses based on user inputs, aiming to engage in casual and supportive conversations. The app is built with **React** (TypeScript) on the frontend and **FastAPI** on the backend, utilizing **Ant Design** for UI components.
 
-## Available Scripts
+## Features
+- **Real-time Chat**: Users can chat with an AI model that provides responses based on user input.
+- **Personality Customization**: Users can name the AI model and set its personality traits.
+- **Spin Loader**: Displays a loading animation while the AI is generating a response.
+- **Dynamic Background**: The background is a video that provides a calming atmosphere during the chat.
+- **Responsive Design**: The chat interface is responsive and works well on both desktop and mobile devices.
 
-In the project directory, you can run:
+## Model Information
+The application utilizes the **Gemma-2b-it** model fine-tuned for friendly and empathetic conversations. This model is fine-tuned specifically to provide casual and supportive responses that align with the user's emotions and conversation flow.
 
-### `npm start`
+- Model Name: **[Gemma-2b-it (daily_hug)](https://huggingface.co/JaeJiMin/daily_hug)**
+- Model Description: The model is fine-tuned on conversational datasets to engage users in natural, friendly, and supportive dialogue. It is designed to understand and respond with empathy and positivity.
+- Hugging Face Repository: [https://huggingface.co/JaeJiMin/daily_hug](https://huggingface.co/JaeJiMin/daily_hug)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The model is served locally without the need for an external API call to Hugging Face, ensuring faster response times for a real-time chat experience.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies Used
+### Frontend:
+- **React (TypeScript)**
+- **Ant Design**: Used for input fields, buttons, and other UI components.
+- **Axios**: For making HTTP requests to the FastAPI backend.
+- **CSS**: For custom styling and layout adjustments.
 
-### `npm test`
+### Backend:
+- **FastAPI**: Handles user inputs, model processing, and serves the AI model.
+- **Python (Hugging Face Transformers)**: For utilizing the `Gemma-2b-it` AI model.
+- **Conda**: Used for environment management.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Model:
+- **Gemma-2b-it**: A fine-tuned conversational model.
 
-### `npm run build`
+## Setup and Installation
+### Prerequisites:
+- **Node.js** (for frontend)
+- **Python 3.8+** (for backend)
+- **Conda** (for environment management)
+- **Git** (to clone the repository)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend Setup:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo/backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Create and activate the Conda environment:
+    ```bash
+    conda create --name daily_hug python=3.8
+    conda activate daily_hug
+    ```
+   
+3. Install the necessary Python dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+   
+4. Run the FastAPI server:
+    ```bash
+    uvicorn main:app --reload
+    ```
+The FastAPI server should be running on http://localhost:8000.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Frontend Setup:
+1. Move to the frontend directory:
+    ``` bash
+    cd ../frontend
+    ```
 
-### `npm run eject`
+2. Install dependencies:
+    ``` bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Install dependencies:
+    ``` bash
+    npm install
+    ```
+The frontend should now be running on http://localhost:3000.
+   
+## Usage Instructions
+1. **Enter User Details:** On the first screen, enter your name, the name of the AI model, and select personality traits for the model.
+2. **Chat:** Once the details are submitted, the app transitions to the chat screen where you can start a conversation with the AI model.
+3. **Real-time Responses:** The model will respond to your inputs with dynamic, empathetic messages. While waiting for a response, a loading spinner is displayed.
